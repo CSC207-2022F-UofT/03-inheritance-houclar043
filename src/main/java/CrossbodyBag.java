@@ -30,3 +30,35 @@
  *
  *       See the tests in test/CrossBodyBagTest.java for examples.
  */
+
+public class CrossbodyBag extends Bag{
+
+    int numberOfStraps;
+    public CrossbodyBag(String color, int capacity, int numberOfStraps){
+        super(color, capacity);
+        this.numberOfStraps = numberOfStraps;
+    }
+
+    public int getNumberOfStraps() {
+        enhance();
+        return numberOfStraps;
+
+    }
+
+    @Override
+    public void enhance() {
+        /* TODO: Implement this method.
+         *       You may want to use the increaseCapacity() method that was
+         *       implemented in Bag.
+         *
+         * To call a method defined in a parent, you use super.method_name(...)
+         */
+        super.increaseCapacity(2);
+    }
+
+    @Override
+    public String toString(){
+        return this.color + " Crossbody Bag with "+this.numberOfStraps+" straps (" + this.numberOfContents + " / " +
+                this.capacity + ")";
+    }
+}
